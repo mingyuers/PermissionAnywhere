@@ -4,24 +4,19 @@ buildscript {
     repositories {
         google()
         jcenter()
-
+        
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.3'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
     }
-    tasks.withType(Javadoc) {
-        options.addStringOption('Xdoclint:none', '-quiet')
-        options.addStringOption('encoding', 'UTF-8')
-    }
-
 }
 
 allprojects {
     repositories {
         google()
         jcenter()
-
+        
     }
 }
 

@@ -1,10 +1,10 @@
 package com.mingyuers.permission;
 
 import android.os.Build;
+import android.support.annotation.RequiresApi;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentTransaction;
 
 /***
  * Created by fangm on 2019-11-18 14:29
