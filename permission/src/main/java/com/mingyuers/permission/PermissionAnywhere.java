@@ -35,9 +35,8 @@ public class PermissionAnywhere {
     public static void requestPermission(final String[] permissions, PermissionCallback permissionCallback) throws Exception {
         Activity context = ActivityUtils.getTopActivity();
         if (context == null) {
-            throw new NullPointerException();
+            throw new NullPointerException("Top Activity is Null!");
         }
         requestPermission(context, permissions, permissionCallback);
-
     }
 }
