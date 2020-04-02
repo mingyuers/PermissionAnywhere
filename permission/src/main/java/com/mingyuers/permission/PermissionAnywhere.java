@@ -1,9 +1,9 @@
 package com.mingyuers.permission;
 
+import android.app.Activity;
+import android.app.FragmentTransaction;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AppCompatActivity;
 
 
 /***
@@ -14,7 +14,7 @@ public class PermissionAnywhere {
     private static PermissionFragment permissionFragment;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public static void requestPermission(final AppCompatActivity context, final String[] permissions, PermissionCallback permissionCallback) {
+    public static void requestPermission(final Activity context, final String[] permissions, PermissionCallback permissionCallback) {
         if(permissionFragment == null){
             permissionFragment = new PermissionFragment();
         }
@@ -25,7 +25,7 @@ public class PermissionAnywhere {
             }
         });
         permissionFragment.setOnPermissionCallback(permissionCallback);
-        FragmentTransaction fragmentTransaction = context.getSupportFragmentManager().beginTransaction();
+        FragmentTransaction fragmentTransaction = context.getFragmentManager().beginTransaction();
         fragmentTransaction.add(permissionFragment, "permissionFragment@777").commit();
     }
 }
