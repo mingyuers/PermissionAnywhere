@@ -17,18 +17,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-            PermissionAnywhere.requestPermission(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CALL_PHONE}
-                    , new PermissionCallback() {
-                        @Override
-                        public void onComplete(List<String> grantedPermissions, List<String> deniedPermissions, List<String> alwaysDeniedPermissions) {
-                            System.out.println("onPermissionGranted" + grantedPermissions.toString());
-                            System.out.println("onPermissionDenied" + deniedPermissions.toString());
-                            System.out.println("onPermissionAlwaysDenied" + alwaysDeniedPermissions.toString());
+            try {
+                PermissionAnywhere.requestPermission(new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CALL_PHONE}
+                        , new PermissionCallback() {
+                            @Override
+                            public void onComplete(List<String> grantedPermissions, List<String> deniedPermissions, List<String> alwaysDeniedPermissions) {
+                                System.out.println("onPermissionGranted" + grantedPermissions.toString());
+                                System.out.println("onPermissionDenied" + deniedPermissions.toString());
+                                System.out.println("onPermissionAlwaysDenied" + alwaysDeniedPermissions.toString());
 
-                            System.out.println("onComplete");
-                        }
-                    });
+                                System.out.println("onComplete");
+                            }
+                        });
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
         }
+
+
 
     }
 }

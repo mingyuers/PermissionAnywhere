@@ -17,7 +17,7 @@ public class PermissionAnywhere {
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     public static void requestPermission(final Activity context, final String[] permissions, PermissionCallback permissionCallback) {
-        if(permissionFragment == null){
+        if (permissionFragment == null) {
             permissionFragment = new PermissionFragment();
         }
         permissionFragment.setOnAttachCallback(new FragmentAttachCallback() {
@@ -32,8 +32,12 @@ public class PermissionAnywhere {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.M)
-    public static void requestPermission(final String[] permissions, PermissionCallback permissionCallback) {
+    public static void requestPermission(final String[] permissions, PermissionCallback permissionCallback) throws Exception {
         Activity context = ActivityUtils.getTopActivity();
-        requestPermission(context,permissions,permissionCallback);
+        if (context == null) {
+            throw new NullPointerException();
+        }
+        requestPermission(context, permissions, permissionCallback);
+
     }
 }
