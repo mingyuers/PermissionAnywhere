@@ -2,7 +2,7 @@
 
 [![](https://jitpack.io/v/mingyuers/PermissionAnywhere.svg)](https://jitpack.io/#mingyuers/PermissionAnywhere)
 
-#### SetUp
+## SetUp
 
 1、Add the JitPack repository to your build file
 ```js
@@ -20,7 +20,7 @@ dependencies {
 }
 ```
 
-#### How to use
+## How to use
 1、use in your code
 ```java
 requestPermission(final Activity context, final String[] permissions, PermissionCallback permissionCallback)
@@ -42,4 +42,8 @@ PermissionAnywhere.requestPermission(new String[]{Manifest.permission.WRITE_EXTE
 ```
 
 
-#### License
+## License
+
+MIT License
+
+Copyright (c) 2020 mingyuers
